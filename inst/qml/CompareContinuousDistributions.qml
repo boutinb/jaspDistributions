@@ -19,16 +19,16 @@ Form
 			],
 			parametersSettings: {
 				"sigma": [
-					{ name: "normalMu",					label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
-					{ name: "normalSigma",				label: qsTr("σ (std. deviation)"),	min: 0,				defaultValue: 1}
+					{ value: "normalMu",				label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
+					{ value: "normalSigma",				label: qsTr("σ (std. deviation)"),	min: 0,				defaultValue: 1}
 				],
 				"sigma2": [
-					{ name: "normalMu",					label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
-					{ name: "normalSigma2",				label: qsTr("σ² (variance)"),		min: 0,				defaultValue: 1}
+					{ value: "normalMu",				label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
+					{ value: "normalSigma2",			label: qsTr("σ² (variance)"),		min: 0,				defaultValue: 1}
 				],
 				"tau": [
-					{ name: "normalMu",					label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
-					{ name: "normalTau",				label: qsTr("τ (precision)"),		min: 0,				defaultValue: 1}
+					{ value: "normalMu",				label: qsTr("μ (mean)"),			min: -Infinity,		defaultValue: 0},
+					{ value: "normalTau",				label: qsTr("τ (precision)"),		min: 0,				defaultValue: 1}
 				]
 			}
 		},
@@ -36,33 +36,33 @@ Form
 		"StandardT": {
 			parametersSettings: {
 				"default": [
-					{ name: "standardTNu",				label: qsTr("ν (df)"),				min: 0,				defaultValue: 5}
+					{ value: "standardTNu",				label: qsTr("ν (df)"),				min: 0,				defaultValue: 5}
 				]
 			}
 		},
 		"NoncentralT": {
 			parametersSettings: {
 				"default": [
-					{ name: "noncentralTNu",			label: qsTr("ν (df)"),				min: 0,				defaultValue: 5},
-					{ name: "noncentralTKappa",			label: qsTr("κ (noncentrality)"),	min: -Infinity,		defaultValue: 0}
+					{ value: "noncentralTNu",			label: qsTr("ν (df)"),				min: 0,				defaultValue: 5},
+					{ value: "noncentralTKappa",		label: qsTr("κ (noncentrality)"),	min: -Infinity,		defaultValue: 0}
 				]
 			}
 		},
 		"NoncentralStudentT": {
 			parametersSettings: {
 				"default": [
-					{ name: "noncentralStudentTNu",		label: qsTr("ν (df)"),				min: 0,				defaultValue: 5},
-					{ name: "noncentralStudentTKappa",	label: qsTr("κ (noncentrality)"),	min: -Infinity,		defaultValue: 0},
-					{ name: "noncentralStudentTMu",		label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
-					{ name: "noncentralStudentTSigma",	label: qsTr("σ (scale)"),			min: 0,				defaultValue: 1}
+					{ value: "noncentralStudentTNu",	label: qsTr("ν (df)"),				min: 0,				defaultValue: 5},
+					{ value: "noncentralStudentTKappa",	label: qsTr("κ (noncentrality)"),	min: -Infinity,		defaultValue: 0},
+					{ value: "noncentralStudentTMu",	label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "noncentralStudentTSigma",	label: qsTr("σ (scale)"),			min: 0,				defaultValue: 1}
 				]
 			}
 		},
 		"Cauchy": {
 			parametersSettings: {
 				"default": [
-					{ name: "cauchyMu",					label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
-					{ name: "cauchySigma",				label: qsTr("σ (scale)"),			min: 0,				defaultValue: 1},
+					{ value: "cauchyMu",				label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "cauchySigma",				label: qsTr("σ (scale)"),			min: 0,				defaultValue: 1},
 				]
 			}
 		},
@@ -70,8 +70,110 @@ Form
 		"Gumbel": {
 			parametersSettings: {
 				"default": [
-					{ name: "gumbelMu",					label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
-					{ name: "gumbelBeta",				label: qsTr("β (scale)"),			min: 0,				defaultValue: 1},
+					{ value: "gumbelMu",				label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "gumbelBeta",				label: qsTr("β (scale)"),			min: 0,				defaultValue: 1},
+				]
+			}
+		},
+		"Laplace" : {
+			parametersSettings: {
+				"default": [
+					{ value: "laplaceMu",				label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "laplaceBeta",				label: qsTr("β (scale)"),			min: 0,				defaultValue: 1},
+				]
+			}
+		},
+		"Logistic" : {
+			parametersSettings: {
+				"default": [
+					{ value: "logisticMu",				label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "logisticSigma",			label: qsTr("β (scale)"),			min: 0,				defaultValue: 1},
+				]
+			}
+		},
+		"SkewedGeneralizedT": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewedGeneralizedTMu",	label: qsTr("μ (location)"),		min: -Infinity,		defaultValue: 0},
+					{ value: "skewedGeneralizedTSigma",	label: qsTr("σ (scale)"),			min: 0,				defaultValue: 1},
+					{ value: "skewedGeneralizedTLambda",label: qsTr("λ (skew)"),			min: -1,			defaultValue: 0},
+					{ value: "skewedGeneralizedTP",		label: qsTr("p (kurtosis)"),		min: 0,				defaultValue: 2},
+					{ value: "skewedGeneralizedTQ",		label: qsTr("q (kurtosis)"),		min: 0,				defaultValue: 2},
+				]
+			}
+		},
+		"SymmetricGeneralizedNormal": {
+			parametersSettings: {
+				"default": [
+					{ value: "symmetricGeneralizedNormalMu",	label: qsTr("μ (location)"),	min: -Infinity,		defaultValue: 0},
+					{ value: "symmetricGeneralizedNormalAlpha",	label: qsTr("σ (scale)"),		min: 0,				defaultValue: 1},
+					{ value: "symmetricGeneralizedNormalBeta",	label: qsTr("β (shape)"),		min: 0,				defaultValue: 2},
+				]
+			}
+		},
+		"SkewNormal": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+					{ value: "skewNormalOmega",	label: qsTr("ω (scale)"),		min: 0,				defaultValue: 1},
+					{ value: "skewNormalAlpha",	label: qsTr("α (slant)"),		min:  -Infinity,	defaultValue: 0}
+				]
+			}
+		}, // TODO: Update settings in the diestributions below!!!!
+		"SkewCauchy": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"SkewT": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+
+		"Beta": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"BetaPrime": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"CentralF": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"NoncentralF": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ChiSquared": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"NoncentralChiSquared": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
 				]
 			}
 		},
@@ -82,80 +184,206 @@ Form
 			],
 			parametersSettings:  {
 				"lambda": [
-					{ name: "exponentialLambda",		label: qsTr("λ (rate)"),			min: 0,				defaultValue: 1}
+					{ value: "exponentialLambda",		label: qsTr("λ (rate)"),			min: 0,				defaultValue: 1}
 				],
 				"beta": [
-					{ name: "exponentialBeta",			label: qsTr("β (scale)"),			min: 0,				defaultValue: 1}
+					{ value: "exponentialBeta",			label: qsTr("β (scale)"),			min: 0,				defaultValue: 1}
+				]
+			}
+		},
+		"Gamma": {
+			parametersChoice : [
+				{ label: qsTr("α (shape), θ (scale)"),	value: "theta"	},
+				{ label: qsTr("α (shape), λ (rate)"),	value: "lambda"	},
+				{ label: qsTr("α (shape), μ (mean)"),	value: "mu"		}
+			],
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"InverseGamma": {
+			parametersChoice : [
+				{ label: qsTr("α (shape), θ (scale)"),	value: "theta"	},
+				{ label: qsTr("α (shape), λ (rate)"),	value: "lambda"	},
+				{ label: qsTr("α (shape), μ (mean)"),	value: "mu"		}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Gompertz": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"LogLogistic": {
+			parametersChoice : [
+				{ label: qsTr("μ (log location), σ (log scale)"),	value: "mu"	},
+				{ label: qsTr("α (scale), β (shape)"),				value: "alpha"	}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"LogNormal"	: {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Wald": {
+			parametersChoice : [
+				{ label: qsTr("μ (mean), λ (shape)"),					value: "mu"		},
+				{ label: qsTr("ν (drift), α (threshold), σ (noise)"),	value: "nu"	}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Weibull": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+
+		"Amoroso": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"StretchedBeta": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Frechet": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Pareto": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Triangular": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"Uniform": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+
+		"ShiftedExponential": {
+			parametersChoice : [
+				{ label: qsTr("λ (rate), shift"),	value: "lambda"	},
+				{ label: qsTr("β (scale), shift"),	value: "beta"	}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedLogNormal": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedGamma": {
+			parametersChoice : [
+				{ label: qsTr("α (shape), θ (scale), shift"),	value: "theta"	},
+				{ label: qsTr("α (shape), λ (rate), shift"),	value: "lambda"	},
+				{ label: qsTr("α (shape), μ (mean), shift"),	value: "mu"		}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedInverseGamma": {
+			parametersChoice : [
+				{ label: qsTr("α (shape), θ (scale), shift"),	value: "theta"	},
+				{ label: qsTr("α (shape), λ (rate), shift"),	value: "lambda"	},
+				{ label: qsTr("α (shape), μ (mean), shift"),	value: "mu"		}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedLogLogistic": {
+			parametersChoice : [
+				{ label: qsTr("μ (log location), σ (log scale), shift"),	value: "mu"	},
+				{ label: qsTr("α (scale), β (shape), shift"),				value: "alpha"	}
+			],
+
+			parametersSettings: {
+
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedWald": {
+			parametersChoice : [
+				{ label: qsTr("μ (mean), λ (shape), shift"),					value: "mu"		},
+				{ label: qsTr("ν (drift), α (threshold), σ (noise), shift"),	value: "nu"	}
+			],
+
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
+				]
+			}
+		},
+		"ShiftedWeibull": {
+			parametersSettings: {
+				"default": [
+					{ value: "skewNormalXi",	label: qsTr("ξ (location)"),	min: -Infinity,		defaultValue: 0},
 				]
 			}
 		}
-	}
 
-/*	property var parametersValues2: {
-		// Multi-parametrization distributions
-		if (distribution.currentValue === "Normal")
-			return [
-				{ label: qsTr("μ (mean), σ (std.deviation)"),	value: "sigma"	},
-				{ label: qsTr("μ (mean), σ² (variance)"),		value: "sigma2"	},
-				{ label: qsTr("μ (mean), τ (precision)"),		value: "tau"	}
-			]
-		if (distribution.currentValue === "Exponential")
-			return [
-				{ label: qsTr("λ (rate)"), 	value: "lambda"	},
-				{ label: qsTr("β (scale)"),	value: "beta" 	}
-			]
-		if (distribution.currentValue === "Gamma")
-			return [
-				{ label: qsTr("α (shape), θ (scale)"),	value: "theta"	},
-				{ label: qsTr("α (shape), λ (rate)"),	value: "lambda"	},
-				{ label: qsTr("α (shape), μ (mean)"),	value: "mu"		}
-			]
-		if (distribution.currentValue === "InverseGamma")
-			return [
-				{ label: qsTr("α (shape), θ (scale)"),	value: "theta"	},
-				{ label: qsTr("α (shape), λ (rate)"),	value: "lambda"	},
-				{ label: qsTr("α (shape), μ (mean)"),	value: "mu"		}
-			]
-		if (distribution.currentValue === "LogLogistic")
-			return [
-				{ label: qsTr("μ (log location), σ (log scale)"),	value: "mu"	},
-				{ label: qsTr("α (scale), β (shape)"),				value: "alpha"	}
-			]
-		if (distribution.currentValue === "Wald")
-			return [
-				{ label: qsTr("μ (mean), λ (shape)"),					value: "mu"		},
-				{ label: qsTr("ν (drift), α (threshold), σ (noise)"),	value: "nu"	}
-			]
-		if (distribution.currentValue === "ShiftedExponential")
-			return [
-				{ label: qsTr("λ (rate), shift"),	value: "lambda"	},
-				{ label: qsTr("β (scale), shift"),	value: "beta"	}
-			]
-		if (distribution.currentValue === "ShiftedGamma")
-			return [
-				{ label: qsTr("α (shape), θ (scale), shift"),	value: "theta"	},
-				{ label: qsTr("α (shape), λ (rate), shift"),	value: "lambda"	},
-				{ label: qsTr("α (shape), μ (mean), shift"),	value: "mu"		}
-			]
-		if (distribution.currentValue === "ShiftedInverseGamma")
-			return [
-				{ label: qsTr("α (shape), θ (scale), shift"),	value: "theta"	},
-				{ label: qsTr("α (shape), λ (rate), shift"),	value: "lambda"	},
-				{ label: qsTr("α (shape), μ (mean), shift"),	value: "mu"		}
-			]
-		if (distribution.currentValue === "ShiftedLogLogistic")
-			return [
-				{ label: qsTr("μ (log location), σ (log scale), shift"),	value: "mu"	},
-				{ label: qsTr("α (scale), β (shape), shift"),				value: "alpha"	}
-			]
-		if (distribution.currentValue === "ShiftedWald")
-			return [
-				{ label: qsTr("μ (mean), λ (shape), shift"),					value: "mu"		},
-				{ label: qsTr("ν (drift), α (threshold), σ (noise), shift"),	value: "nu"	}
-			]
-		// Single-parametrization distributions
-		return [{ label: qsTr("default"), value: "default" }]
-	} */
+	}
 
 	VariablesForm
 	{
@@ -268,52 +496,26 @@ Form
 						property var parameters: distributionParametersId.distributionParameters.hasOwnProperty("parametersChoice") ? distributionParametersId.distributionParameters["parametersChoice"] : []
 					}
 
-					Group
+					ComponentsList
 					{
-						id: parametersSettingsId
-						rowSpacing: 0
-						columns: 3
+						id:					parametersSettingsId
+						values:				parametersSettings
+						name:				"parametersSettings"
+						addItemManually:	false
+						visible:			parametersSettings.length > 0
+
 						property var parametersSettingsAll: distributionParametersId.distributionParameters.hasOwnProperty("parametersSettings") ? distributionParametersId.distributionParameters["parametersSettings"] : {}
-						property var parametersSettings: parametersSettingsAll.hasOwnProperty(parameterChoice.currentValue) ? parametersSettingsAll[parameterChoice.currentValue] : (parametersSettingsAll.hasOwnProperty("default") ? parametersSettingsAll["default"] : [])
+						property var parametersSettings:	parametersSettingsAll.hasOwnProperty(parameterChoice.currentValue) ? parametersSettingsAll[parameterChoice.currentValue] : (parametersSettingsAll.hasOwnProperty("default") ? parametersSettingsAll["default"] : [])
 
-						property var parametersSettings1: parametersSettings.length > 0 ? parametersSettings[0] : {visible: false, label: "", min: 0, defaultValue: 0, name: "name1", fixedName: "fixedName1" }
-						property var parametersSettings2: parametersSettings.length > 1 ? parametersSettings[1] : {visible: false, label: "", min: 0, defaultValue: 0, name: "name2", fixedName: "fixedName2"  }
-						property var parametersSettings3: parametersSettings.length > 2 ? parametersSettings[2] : {visible: false, label: "", min: 0, defaultValue: 0, name: "name3", fixedName: "fixedName3"  }
-						property var parametersSettings4: parametersSettings.length > 3 ? parametersSettings[3] : {visible: false, label: "", min: 0, defaultValue: 0, name: "name4", fixedName: "fixedName4"  }
-						property var parametersSettings5: parametersSettings.length > 4 ? parametersSettings[4] : {visible: false, label: "", min: 0, defaultValue: 0, name: "name5", fixedName: "fixedName5"  }
 
-						Label {			visible: parametersSettingsId.parametersSettings.length > 0;	text: parametersSettingsId.parametersSettings1.label }
-						DoubleField	{	visible: parametersSettingsId.parametersSettings.length > 0;	name: "parameter1";		min: parametersSettingsId.parametersSettings1.min;	defaultValue: parametersSettingsId.parametersSettings1.defaultValue }
-						CheckBox	{	visible: parametersSettingsId.parametersSettings.length > 0;	name: "parameterFixed1";	label: qsTr("Fixed") }
-
-						Label {			visible: parametersSettingsId.parametersSettings.length > 1;	text: parametersSettingsId.parametersSettings2.label }
-						DoubleField	{	visible: parametersSettingsId.parametersSettings.length > 1;	name: "parameter2";		min: parametersSettingsId.parametersSettings2.min;	defaultValue: parametersSettingsId.parametersSettings2.defaultValue }
-						CheckBox	{	visible: parametersSettingsId.parametersSettings.length > 1;	name: "parameterFixed2";	label: qsTr("Fixed") }
-
-						Label {			visible: parametersSettingsId.parametersSettings.length > 2;	text: parametersSettingsId.parametersSettings3.label }
-						DoubleField	{	visible: parametersSettingsId.parametersSettings.length > 2;	name: "parameter3";		min: parametersSettingsId.parametersSettings3.min;	defaultValue: parametersSettingsId.parametersSettings3.defaultValue }
-						CheckBox	{	visible: parametersSettingsId.parametersSettings.length > 2;	name: "parameterFixed3";	label: qsTr("Fixed") }
-
-						Label {			visible: parametersSettingsId.parametersSettings.length > 3;	text: parametersSettingsId.parametersSettings4.label }
-						DoubleField	{	visible: parametersSettingsId.parametersSettings.length > 3;	name: "parameter4";		min: parametersSettingsId.parametersSettings4.min;	defaultValue: parametersSettingsId.parametersSettings4.defaultValue }
-						CheckBox	{	visible: parametersSettingsId.parametersSettings.length > 3;	name: "parameterFixed4";	label: qsTr("Fixed") }
-
-						Label {			visible: parametersSettingsId.parametersSettings.length > 4;	text: parametersSettingsId.parametersSettings5.label }
-						DoubleField	{	visible: parametersSettingsId.parametersSettings.length > 4;	name: "parameter5";		min: parametersSettingsId.parametersSettings5.min;	defaultValue: parametersSettingsId.parametersSettings5.defaultValue }
-						CheckBox	{	visible: parametersSettingsId.parametersSettings.length > 4;	name: "parameterFixed5";	label: qsTr("Fixed") }
+						rowComponent: Row {
+							spacing: 10 * jaspTheme.uiScale
+							Label {			width: 100 * jaspTheme.uiScale; text: rowLabel }
+							DoubleField	{	name: rowValue;		min: parametersSettingsId.parametersSettings[rowIndex].min;	defaultValue: parametersSettingsId.parametersSettings[rowIndex].defaultValue }
+							CheckBox	{	name: rowValue + "Fixed";	label: qsTr("Fixed") }
+						}
 
 					}
-
-					Group
-					{
-						visible: false
-						TextField {name: "parameterName1"; value: parametersSettingsId.parametersSettings1.name }
-						TextField {name: "parameterName2"; value: parametersSettingsId.parametersSettings2.name }
-						TextField {name: "parameterName3"; value: parametersSettingsId.parametersSettings3.name }
-						TextField {name: "parameterName4"; value: parametersSettingsId.parametersSettings4.name }
-						TextField {name: "parameterName5"; value: parametersSettingsId.parametersSettings5.name }
-					}
-
 				}
 			}
 	}
